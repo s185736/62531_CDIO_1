@@ -6,6 +6,10 @@ import java.awt.event.ActionListener;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
+/**
+ *
+ * Status: In-progress.
+ */
 public class GUI extends JFrame{
     private JButton startSpilletButton;
     private JPanel panel1;
