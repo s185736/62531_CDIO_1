@@ -95,12 +95,13 @@ public class Dice extends GUI {
                             }
                         }
                     }
-                    if (user1.getPoints() >= requiredPoints) {
+                    //Denne metode tjekker kun efter begge ture er kørt pr 'runde'.
+                    if (user1.getPoints() >= 40) {
                         if (game == true) { //player1
                             System.out.println(user1.getOption() + " er vinderen, da der er nået 40 points.");
                         }
                     } else {
-                        if (user2.getPoints() >= requiredPoints) {
+                        if (user2.getPoints() >= 40) {
                             if (game == false) { //player2
                                 System.out.println(user2.getOption() + " er vinderen, da der er nået 40 points.");
                             }

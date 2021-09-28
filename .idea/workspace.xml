@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="GUI klassen opdateres, unødvendige linjer slettes.">
+    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Regel 4 er tilføjet.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
