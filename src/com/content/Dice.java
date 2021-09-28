@@ -46,7 +46,7 @@ public class Dice extends GUI {
                     //Brugeren skal taste et bogstav for at programmet fortsætter
                     String command;
                     command = scanner.next();
-                    if (command.equalsIgnoreCase("a")) //indtast ethvert bogstav/symbol for at kaste terningen.
+                    if (command.equalsIgnoreCase("a") || command.equalsIgnoreCase("l")) //indtast ethvert bogstav/symbol for at kaste terningen.
                         //Hermed kastes to terninger dice 1 og 2 og lægges sammen.
                         for (User roll : Arrays.asList(dice1, dice2)) {
                             roll.roll();
@@ -63,6 +63,22 @@ public class Dice extends GUI {
                     } else { //Hvis ikke, så fortsættes processen..
                         System.out.println("Summen af begge Terning: " + sumOfDices + ".");
                         System.out.println("-------------------------------");
+                        //Denne metode tjekker kun efter begge ture er kørt pr 'runde'.
+                        //Hvis player1 har fået 40 points, så ventes der til, at player2 får sin vilje.
+                        //Printer spilleren der først har opnået 40 points.
+                        if (user1.getPoints() >= 40) { //tjekker for player1
+                            if (game == true) { //player1
+                                System.out.println(user1.getOption() + " er vinderen, da der er opnået 40 points.");
+                                System.exit(1);
+                            }
+                        } else {
+                            if (user2.getPoints() >= 40) {//tjekker for player2
+                                if (game == false) { //player2
+                                    System.out.println(user2.getOption() + " er vinderen, da der er opnået 40 points.");
+                                    System.exit(1);
+                                }
+                            }
+                        }
                         //Spilleregel: Hvis terningen er to 6'ere og den forrige kast var to 6'ere vil dette afbryde løkken (regel 3).
                         //If-sætning for at tjekke om man har fået 12 points (6x2) og også forrige kast.
                         if (sumOfDices == 12 && user1.getFinalRoll() == 12) {
@@ -95,18 +111,7 @@ public class Dice extends GUI {
                             }
                         }
                     }
-                    //Denne metode tjekker kun efter begge ture er kørt pr 'runde'.
-                    if (user1.getPoints() >= 40) {
-                        if (game == true) { //player1
-                            System.out.println(user1.getOption() + " er vinderen, da der er nået 40 points.");
-                        }
-                    } else {
-                        if (user2.getPoints() >= 40) {
-                            if (game == false) { //player2
-                                System.out.println(user2.getOption() + " er vinderen, da der er nået 40 points.");
-                            }
-                        }
-                    }
+
                     regel1(user1, user2, dice1, dice2, requiredPoints); //tjek klassen.
                 } while (user1.getPoints() <= requiredPoints && user2.getPoints() <= requiredPoints);
             }
