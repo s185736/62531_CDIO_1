@@ -3,37 +3,25 @@ package com.content;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.OutputStream;
-import java.io.PrintStream;
 
 /**
  *
  * Status: In-progress.
  */
+
 public class GUI extends JFrame{
     private JButton startSpilletButton;
     private JPanel panel1;
     private JLabel printLabel;
 
-    public GUI() {
+    public GUI() { //Konstruktor..
         add(panel1);
-        setTitle("Rafflebæger");
-        setSize(400,250);
-
-        System.setOut(new PrintStream(System.out) {
-            @Override
-            public void write(byte[] buf, int off, int len) {
-                super.write(buf, off, len);
-                String msg = new String(buf, off, len);
-                printLabel.setText(printLabel.getText() + msg+"\n");
-            }
-        });
-
+        setTitle("Game");
+        setSize(250,100);
         startSpilletButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Dice d = new Dice();
-                d.Dice();
+                dispose();
             }
         });
     }

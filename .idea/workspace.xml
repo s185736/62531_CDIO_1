@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Updated." />
+    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Updated.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Terning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Terning.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/content/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,11 +88,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/GUI.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\azmi_\Documents\GitHub\62531_CDIO_1\lib" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -127,8 +143,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632745418000</updated>
-      <workItem from="1632745419511" duration="2013000" />
-      <workItem from="1632747561077" duration="241000" />
+      <workItem from="1632745419511" duration="7574000" />
+      <workItem from="1632809335913" duration="52000" />
+      <workItem from="1632826336777" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="Updated.">
       <created>1632747227842</created>
