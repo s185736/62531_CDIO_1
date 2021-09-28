@@ -1,5 +1,6 @@
 /*Kilde: https://www.unf.edu/~wkloster/2551/Dice.java */
 package com.content;
+import javax.swing.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -25,17 +26,17 @@ public class Dice extends GUI {
          * game == false -> Player2's tur.
          */
         boolean game = true;
-        //Herunder printes status af spillet når det er den specfikkes tur..
+        JLabel rollLabel = new JLabel();
         if (user1.getPoints() <= requiredPoints)
             if (user2.getPoints() <= requiredPoints) {
-                do { //do loop anvendes, hvor status printes ud efter hver tur/runde.
-                    if (game) { //game = true er lig med player1
+                do {
+                    if (game) {
                         System.out.println("\n" + user1.getOption() + ", det er din tur.");
                         //rollLabel.setText("\n" + user1.getOption() + ", det er din tur.");
                         System.out.println("Din samlede points: " + user1.getPoints());
                         System.out.println("Indtast kommandoen 'a' for at kaste med terningen.");
                         //rollLabel.setText("Din samlede points: " + user1.getPoints());
-                    } else { //game = false er lig player2
+                    } else {
                         System.out.println("\n" + user2.getOption() + ", det er din tur.");
                         //rollLabel.setText("\n" + user2.getOption() + ", det er din tur.");
                         System.out.println("Din samlede points: " + user2.getPoints());
@@ -70,7 +71,27 @@ public class Dice extends GUI {
                             if (sumOfDices == 12 && user2.getFinalRoll() == 12) {
                                 break;
                             } else {
-                                regel3_2x(user1, user2, dice1, dice2, sumOfDices); //tjek klassen.
+                                if (game == true) { //spiller1
+                                    //Her gives der ekstra point hvis man har fået et par.
+                                    if (dice1.getFaceValue() != dice2.getFaceValue()) {
+                                        user1.givePoints(sumOfDices);
+                                        game = false;
+                                    } else if (dice1.getFaceValue() == dice2.getFaceValue()) { //faceValue tjekker om man har slået 6 par samt den forrige.
+                                        user1.givePoints(sumOfDices);
+                                        user1.setFinalRoll(sumOfDices);
+                                        game = true;
+                                    }
+                                } else if (game == false) { //spiller2
+                                    //Her gives der ekstra point hvis man har fået et par.
+                                    if (dice1.getFaceValue() != dice2.getFaceValue()) {
+                                        user2.givePoints(sumOfDices);
+                                        game = true;
+                                    } else if (dice1.getFaceValue() == dice2.getFaceValue()) { //faceValue tjekker om man har slået 6 par samt den forrige.
+                                        user2.givePoints(sumOfDices);
+                                        user2.setFinalRoll(sumOfDices);
+                                        game = false;
+                                    }
+                                }
                             }
                         }
                     }
@@ -92,6 +113,7 @@ public class Dice extends GUI {
             }
         }
     }
+
     public static void regel2_3(User user1, User user2, User dice1, User dice2, int requiredPoints) {
         boolean game = true; //game process, true = player1 false = player2
         //Meddelelse om man har slået par 6 to gange (regel 3).
@@ -116,31 +138,6 @@ public class Dice extends GUI {
                 if (game == false) { //player2
                     System.out.println(user2.getOption() + " er vinderen, da der er blevet slået par " + dice1.getFaceValue() + ".");
                 }
-            }
-        }
-    }
-    public static void regel3_2x(User user1, User user2, User dice1, User dice2, int sumOfDices) {
-        //Spilleregel: Hvis terningen er to 6'ere og den forrige kast var to 6'ere vil dette afbryde løkken (regel 3).
-        boolean game = true;
-        if (game == true) {
-            //Her gives der ekstra point hvis man har fået et par.
-            if (dice1.getFaceValue() != dice2.getFaceValue()) {
-                user1.givePoints(sumOfDices);
-                game = false;
-            } else if (dice1.getFaceValue() == dice2.getFaceValue()) {
-                user1.givePoints(sumOfDices);
-                user1.setFinalRoll(sumOfDices);
-                game = true;
-            }
-        } else if (game == false) {
-            //Her gives der ekstra point hvis man har fået et par.
-            if (dice1.getFaceValue() != dice2.getFaceValue()) {
-                user2.givePoints(sumOfDices);
-                game = true;
-            } else if (dice1.getFaceValue() == dice2.getFaceValue()) {
-                user2.givePoints(sumOfDices);
-                user2.setFinalRoll(sumOfDices);
-                game = false;
             }
         }
     }
