@@ -1,0 +1,17 @@
+Index: src/com/content/GUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.content;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\n/**\r\n *\r\n * Status: In-progress.\r\n */\r\n\r\npublic class GUI extends JFrame{\r\n    private JButton startSpilletButton;\r\n    private JPanel panel1;\r\n    private JLabel printLabel;\r\n\r\n    public GUI() { //Konstruktor..\r\n        add(panel1);\r\n        setTitle(\"Game\");\r\n        setSize(250,100);\r\n        startSpilletButton.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                dispose();\r\n            }\r\n        });\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/content/GUI.java b/src/com/content/GUI.java
+--- a/src/com/content/GUI.java	(revision aff7458b18115a45e15592e5181f78b65591000f)
++++ b/src/com/content/GUI.java	(date 1632828872588)
+@@ -25,4 +25,4 @@
+             }
+         });
+     }
+-}
++}
+\ No newline at end of file

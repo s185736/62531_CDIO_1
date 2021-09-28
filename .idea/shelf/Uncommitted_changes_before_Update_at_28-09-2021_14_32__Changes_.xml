@@ -1,0 +1,29 @@
+<changelist name="Uncommitted_changes_before_Update_at_28-09-2021_14_32_[Changes]" date="1632832361753" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-09-2021_14_32_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 28-09-2021 14:32 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Terning/com/content/Main.class" />
+    <option name="AFTER_PATH" value="out/production/Terning/com/content/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-09-2021_14_32_[Changes]/Main.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Terning/com/content/GUI$1.class" />
+    <option name="AFTER_PATH" value="out/production/Terning/com/content/GUI$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-09-2021_14_32_[Changes]/GUI$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Terning/com/content/GUI.class" />
+    <option name="AFTER_PATH" value="out/production/Terning/com/content/GUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-09-2021_14_32_[Changes]/GUI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Terning/com/content/GUI$2.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Terning/com/content/Dice.class" />
+    <option name="AFTER_PATH" value="out/production/Terning/com/content/Dice.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-09-2021_14_32_[Changes]/Dice.class" />
+  </binary>
+</changelist>

@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame{
     private JButton startSpilletButton;
     private JPanel panel1;
-    private JLabel printLabel;
 
     public GUI() { //Konstruktor..
         add(panel1);
@@ -22,6 +21,8 @@ public class GUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
+                Dice game = new Dice();
+                game.Design();
             }
         });
     }

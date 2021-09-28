@@ -1,0 +1,381 @@
+Index: src/com/content/Dice.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.content;\r\n\r\npublic class Dice {\r\n\r\n    public static void Dice() {\r\n        int Ole[] = new int[50], Jens[] = new int[50]; //1. terning.\r\n        int OlePoints = 0, JensPoints = 0;\r\n        int matches = 50, i =0; //matches; antal runder.\r\n\r\n        while (i < Ole.length) {\r\n            System.out.println(\"Status: \" + matches+\". runde.\");\r\n            Ole[i] = (int) ((Math.random() * 6) + 1);\r\n            Jens[i] = (int) ((Math.random() * 6) + 1);\r\n            System.out.println(\"Ole kaster \" + Ole[i]);\r\n            System.out.println(\"Jens kaster \" + Jens[i]);\r\n            System.out.println(\"---------------------------\");\r\n\r\n            if (Ole[i] != Jens[i]) {\r\n                if (Ole[i] > Jens[i]) OlePoints = OlePoints + 5;\r\n                else if (Jens[i] > Ole[i]) {\r\n                    JensPoints = JensPoints + 5;\r\n                }\r\n                OlePoints += 3;\r\n                JensPoints += 3;\r\n            } else {\r\n                OlePoints += 3;\r\n                JensPoints += 3;\r\n            }\r\n            if (OlePoints >= 50) {\r\n                break;\r\n            } else if (JensPoints >= 50) {\r\n                break;\r\n            }\r\n            i++;\r\n        }\r\n        System.out.println(\"\\nDer er i alt blevet spillet \"+matches+\" runder.\");\r\n        System.out.println(\"Resultatet: Ole (\"+OlePoints+\") og Jens(\"+JensPoints+\").\");\r\n\r\n        if (Jens[i] == Ole[i]) {\r\n            System.out.println(\"Spillet er uafgjort!\");\r\n        } else {\r\n            System.out.println(OlePoints >= JensPoints ? \"Ole har vundet!\" : \"Jens har vundet!\");\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/content/Dice.java b/src/com/content/Dice.java
+--- a/src/com/content/Dice.java	(revision 9521a0b65e4ba452ba0c7d223f1b8f58adc9e1d6)
++++ b/src/com/content/Dice.java	(date 1632832212865)
+@@ -1,45 +1,134 @@
+ package com.content;
+ 
+-public class Dice {
++import javax.swing.*;
++import java.util.Arrays;
++import java.util.Scanner;
+ 
+-    public static void Dice() {
+-        int Ole[] = new int[50], Jens[] = new int[50]; //1. terning.
+-        int OlePoints = 0, JensPoints = 0;
+-        int matches = 50, i =0; //matches; antal runder.
++public class Dice extends GUI {
+ 
+-        while (i < Ole.length) {
+-            System.out.println("Status: " + matches+". runde.");
+-            Ole[i] = (int) ((Math.random() * 6) + 1);
+-            Jens[i] = (int) ((Math.random() * 6) + 1);
+-            System.out.println("Ole kaster " + Ole[i]);
+-            System.out.println("Jens kaster " + Jens[i]);
+-            System.out.println("---------------------------");
++    public static void Design() {
++        int sumOfDices; //Summen af kastede terninger.
++        int requiredPoints = 40; //Points der skal opnås for at vinde..
++        //Oprettes object for scanner klassen.
++        Scanner scanner = new Scanner(System.in);
++        //Her defineres navnene, og anvendes til at afgøre om hvis tur det er.
++        String a = "Player1";
++        String b = "Player2";
++        //Opretter to spillere med navne..
++        User user1 = new User(a);
++        User user2 = new User(b);
++        //Opretter to terninger af klassen Dice..
++        User dice1 = new User();
++        User dice2 = new User();
+ 
+-            if (Ole[i] != Jens[i]) {
+-                if (Ole[i] > Jens[i]) OlePoints = OlePoints + 5;
+-                else if (Jens[i] > Ole[i]) {
+-                    JensPoints = JensPoints + 5;
+-                }
+-                OlePoints += 3;
+-                JensPoints += 3;
+-            } else {
+-                OlePoints += 3;
+-                JensPoints += 3;
+-            }
+-            if (OlePoints >= 50) {
+-                break;
+-            } else if (JensPoints >= 50) {
+-                break;
+-            }
+-            i++;
+-        }
+-        System.out.println("\nDer er i alt blevet spillet "+matches+" runder.");
+-        System.out.println("Resultatet: Ole ("+OlePoints+") og Jens("+JensPoints+").");
+-
+-        if (Jens[i] == Ole[i]) {
+-            System.out.println("Spillet er uafgjort!");
+-        } else {
+-            System.out.println(OlePoints >= JensPoints ? "Ole har vundet!" : "Jens har vundet!");
++        /*
++         * Terning processen startes:
++         * game == true -> Player1's tur.
++         * game == false -> Player2's tur.
++         */
++        boolean game = true;
++        JLabel rollLabel = new JLabel();
++        if (user1.getPoints() <= requiredPoints)
++            if (user2.getPoints() <= requiredPoints) {
++                do {
++                    if (game) {
++                        System.out.println("\n" + user1.getOption() + ", det er din tur.");
++                        //rollLabel.setText("\n" + user1.getOption() + ", det er din tur.");
++                        System.out.println("Din samlede points: " + user1.getPoints());
++                        System.out.println("Indtast kommandoen 'a' for at kaste med terningen.");
++                        //rollLabel.setText("Din samlede points: " + user1.getPoints());
++                    } else {
++                        System.out.println("\n" + user2.getOption() + ", det er din tur.");
++                        //rollLabel.setText("\n" + user2.getOption() + ", det er din tur.");
++                        System.out.println("Din samlede points: " + user2.getPoints());
++                        System.out.println("Indtast kommandoen 'l' for at kaste med terningen.");
++                        //rollLabel.setText("Din samlede points: " + user2.getPoints());
++                    }
++
++                    //Brugeren skal taste roll for at programmet fortsætter
++                    String command;
++                    command = scanner.next();
++                    if (command.equalsIgnoreCase("a")) //indtast ethvert bogstav/symbol for at kaste terningen.
++                        //Hermed kastes to terninger d1 og d2 og lægges sammen.
++                        for (User roll : Arrays.asList(dice1, dice2)) {
++                            roll.roll();
++                        }
++                    sumOfDices = dice1.getFaceValue() + dice2.getFaceValue();
++                    System.out.println("Resultat:\n   Første terning: " + dice1.getFaceValue() + ".\n   Anden terning: " + dice2.getFaceValue() + ".");
++                    //Spilleregel: To 1'ere nulstiller spillerens points (regel 1).
++                    if (dice1.getFaceValue() == dice2.getFaceValue() && dice1.getFaceValue() == 1 && game == true) {
++                        user1.setResetPoints();
++                    } else if (dice1.getFaceValue() == dice2.getFaceValue() && dice1.getFaceValue() == 1 && game == false) {
++                        user2.setResetPoints();
++                    } else { //Hvis ikke, så fortsættes processen..
++                        System.out.println("Summen af begge Terning: " + sumOfDices + ".");
++                        System.out.println("-------------------------------");
++                        //Spilleregel: Hvis terningen er to 6'ere og den forrige kast var to 6'ere vil dette afbryde løkken (regel 3).
++                        if (sumOfDices == 12 && user1.getFinalRoll() == 12) {
++                            break;
++                        } else {
++                            if (sumOfDices == 12 && user2.getFinalRoll() == 12) {
++                                break;
++                            } else {
++                                if (game == true) {
++                                    //Her gives der ekstra point hvis man har fået et par.
++                                    if (dice1.getFaceValue() != dice2.getFaceValue()) {
++                                        user1.givePoints(sumOfDices);
++                                        game = false;
++                                    } else if (dice1.getFaceValue() == dice2.getFaceValue()) {
++                                        user1.givePoints(sumOfDices);
++                                        user1.setFinalRoll(sumOfDices);
++                                        game = true;
++                                    }
++                                } else if (game == false) {
++                                    //Her gives der ekstra point hvis man har fået et par.
++                                    if (dice1.getFaceValue() != dice2.getFaceValue()) {
++                                        user2.givePoints(sumOfDices);
++                                        game = true;
++                                    } else if (dice1.getFaceValue() == dice2.getFaceValue()) {
++                                        user2.givePoints(sumOfDices);
++                                        user2.setFinalRoll(sumOfDices);
++                                        game = false;
++                                    }
++                                }
++                            }
++                        }
++                    }
++                    //Fortsætter hvis der ikke er slået nogle par.
++                    if (user1.getPoints() > requiredPoints && dice1.getFaceValue() != dice2.getFaceValue()) {
++                        user1.setPoints(40);
++                        System.out.println(user1.getOption() + " har nu opnået 40 points, du har nu sidste chance!");
++                    } else {
++                        if (user2.getPoints() > requiredPoints && dice1.getFaceValue() != dice2.getFaceValue()) {
++                            user2.setPoints(40);
++                            System.out.println(user2.getOption() + " har nu opnået 40 points, du har nu sidste chance!");
++                        }
++                    }
++                } while (user1.getPoints() <= requiredPoints && user2.getPoints() <= requiredPoints);
++            }
++        //Meddelelse om man har slået par 6 to gange (regel 3).
++        if (dice1.getFaceValue() + dice2.getFaceValue() == 12) {
++            if (user1.getFinalRoll() == 12) {
++                System.out.println(user1.getOption() + " er vinderen, da der er slået to sæt af par 6'ere i træk.");
++            }
++        } else if (dice1.getFaceValue() + dice2.getFaceValue() == 12) {
++            if (user2.getFinalRoll() == 12) {
++                System.out.println(user2.getOption() + " er vinderen, da der er slået to sæt af par 6'ere i træk.");
++            }
++        }
++        //Meddelelse om man har slået par (regel 2).
++        if (user1.getPoints() >= requiredPoints) {
++            if (dice1.getFaceValue() == dice2.getFaceValue()) {
++                if (game == true) {
++                    System.out.println(user1.getOption() + " er vinderen, da der er blevet slået par " + dice1.getFaceValue() + ".");
++                }
++            }
++        } else if (user2.getPoints() >= requiredPoints) {
++            if (dice1.getFaceValue() == dice2.getFaceValue()) {
++                if (game == false) {
++                    System.out.println(user2.getOption() + " er vinderen, da der er blevet slået par " + dice1.getFaceValue() + ".");
++                }
++            }
+         }
+     }
+ }
+\ No newline at end of file
+Index: src/com/content/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.content;\r\nimport desktop_resources.GUI;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        /*GUI ui = new GUI();\r\n        ui.setVisible(true);*/\r\n\r\n        GUI.setDice(3, 4);\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/content/Main.java b/src/com/content/Main.java
+--- a/src/com/content/Main.java	(revision 9521a0b65e4ba452ba0c7d223f1b8f58adc9e1d6)
++++ b/src/com/content/Main.java	(date 1632829009990)
+@@ -1,12 +1,12 @@
+ package com.content;
+-import desktop_resources.GUI;
++//import desktop_resources.GUI;
+ 
+ public class Main {
+     public static void main(String[] args) {
+-        /*GUI ui = new GUI();
+-        ui.setVisible(true);*/
++        GUI ui = new GUI();
++        ui.setVisible(true);
+ 
+-        GUI.setDice(3, 4);
++        //GUI.setDice(3, 4);
+ 
+     }
+ }
+Index: src/com/content/GUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.content;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\n/**\r\n *\r\n * Status: In-progress.\r\n */\r\n\r\npublic class GUI extends JFrame{\r\n    private JButton startSpilletButton;\r\n    private JPanel panel1;\r\n    private JLabel printLabel;\r\n\r\n    public GUI() { //Konstruktor..\r\n        add(panel1);\r\n        setTitle(\"Game\");\r\n        setSize(250,100);\r\n        startSpilletButton.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                dispose();\r\n            }\r\n        });\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/content/GUI.java b/src/com/content/GUI.java
+--- a/src/com/content/GUI.java	(revision 9521a0b65e4ba452ba0c7d223f1b8f58adc9e1d6)
++++ b/src/com/content/GUI.java	(date 1632832308204)
+@@ -12,7 +12,6 @@
+ public class GUI extends JFrame{
+     private JButton startSpilletButton;
+     private JPanel panel1;
+-    private JLabel printLabel;
+ 
+     public GUI() { //Konstruktor..
+         add(panel1);
+@@ -22,7 +21,9 @@
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 dispose();
++                Dice game = new Dice();
++                game.Design();
+             }
+         });
+     }
+-}
++}
+\ No newline at end of file
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	(date 1632828983669)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1632828983669)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="InstantiationOfUtilityClass" enabled="false" level="WARNING" enabled_by_default="false" />
++  </profile>
++</component>
+\ No newline at end of file
+Index: src/com/content/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/content/User.java b/src/com/content/User.java
+new file mode 100644
+--- /dev/null	(date 1632832241918)
++++ b/src/com/content/User.java	(date 1632832241918)
+@@ -0,0 +1,30 @@
++package com.content;
++
++class User {
++    private int points, finalRoll, fValue;
++    private String string;
++
++    public User(String string) { this.string = string;}
++
++    public String getOption() { return this.string;}
++
++    public void givePoints(int sum) { this.points = this.points + sum;}
++
++    public void setPoints(int points) { this.points = points;}
++
++    public int getPoints() { return this.points;}
++
++    public int getFinalRoll() { return finalRoll; }
++
++    public void setFinalRoll(int value) { this.finalRoll = value;}
++
++    public User() { fValue = 1; }
++
++    public int getFaceValue() { return fValue; } //
++
++    public void roll() { fValue = (int)(Math.random() * 6) + 1; } //(opretter tilfældige integers fra 1-6).
++
++    public int setResetPoints() {
++        this.points = 0; return this.points;
++    }
++}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d93559a9-d85f-48a2-8aee-5a126fa185b4\" name=\"Changes\" comment=\"Updated.\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1yirmbupNIQcmHgJJInxPUPWVxI\" />\r\n  <component name=\"ProjectView\">\r\n    <navigator currentView=\"ProjectPane\" proportions=\"\" version=\"1\" splitterProportion=\"0.5\">\r\n      <flattenPackages />\r\n      <showMembers />\r\n      <showModules />\r\n      <showLibraryContents />\r\n      <hideEmptyPackages />\r\n      <abbreviatePackageNames />\r\n      <autoscrollToSource />\r\n      <autoscrollFromSource />\r\n      <sortByType />\r\n    </navigator>\r\n    <panes>\r\n      <pane id=\"Scope\" />\r\n      <pane id=\"PackagesPane\" />\r\n      <pane id=\"ProjectPane\">\r\n        <subPane>\r\n          <PATH>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\r\n            </PATH_ELEMENT>\r\n          </PATH>\r\n          <PATH>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\r\n            </PATH_ELEMENT>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\r\n            </PATH_ELEMENT>\r\n          </PATH>\r\n          <PATH>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\r\n            </PATH_ELEMENT>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\r\n            </PATH_ELEMENT>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"src\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\r\n            </PATH_ELEMENT>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"company\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\r\n            </PATH_ELEMENT>\r\n          </PATH>\r\n        </subPane>\r\n      </pane>\r\n    </panes>\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main (1)\">\r\n    <configuration name=\"Main (1)\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.content.Main\" />\r\n      <module name=\"Terning\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.content.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.content.Dice\" />\r\n      <module name=\"Terning\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"file://$PROJECT_DIR$\" />\r\n      <RunnerSettings RunnerId=\"Run\" />\r\n      <ConfigurationWrapper RunnerId=\"Run\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Main\" />\r\n      <item itemvalue=\"Application.Main (1)\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main (1)\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d93559a9-d85f-48a2-8aee-5a126fa185b4\" name=\"Changes\" comment=\"\" />\r\n      <created>1632745418000</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1632745418000</updated>\r\n      <workItem from=\"1632745419511\" duration=\"2013000\" />\r\n      <workItem from=\"1632747561077\" duration=\"241000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Updated.\">\r\n      <created>1632747227842</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1632747227842</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Updated.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Updated.\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9521a0b65e4ba452ba0c7d223f1b8f58adc9e1d6)
++++ b/.idea/workspace.xml	(date 1632831948082)
+@@ -1,7 +1,20 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Updated." />
++    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="GUI klassen opdateres, unødvendige linjer slettes.">
++      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/com/content/User.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$2.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/GUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/content/GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/GUI.form" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/content/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/GUI.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/content/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Main.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -16,6 +29,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="ProjectId" id="1yirmbupNIQcmHgJJInxPUPWVxI" />
+   <component name="ProjectView">
+@@ -157,6 +171,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Updated." />
+-    <option name="LAST_COMMIT_MESSAGE" value="Updated." />
++    <MESSAGE value="GUI klassen opdateres, unødvendige linjer slettes." />
++    <option name="LAST_COMMIT_MESSAGE" value="GUI klassen opdateres, unødvendige linjer slettes." />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/com/content/GUI.form
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<form xmlns=\"http://www.intellij.com/uidesigner/form/\" version=\"1\" bind-to-class=\"com.content.GUI\">\r\n  <grid id=\"27dc6\" binding=\"panel1\" default-binding=\"true\" layout-manager=\"GridLayoutManager\" row-count=\"2\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\r\n    <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\r\n    <constraints>\r\n      <xy x=\"20\" y=\"20\" width=\"500\" height=\"400\"/>\r\n    </constraints>\r\n    <properties/>\r\n    <border type=\"none\"/>\r\n    <children>\r\n      <component id=\"b1e30\" class=\"javax.swing.JButton\" binding=\"startSpilletButton\" default-binding=\"true\">\r\n        <constraints>\r\n          <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"Start Spillet\"/>\r\n        </properties>\r\n      </component>\r\n      <component id=\"8a857\" class=\"javax.swing.JLabel\" binding=\"printLabel\">\r\n        <constraints>\r\n          <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"Label\"/>\r\n        </properties>\r\n      </component>\r\n    </children>\r\n  </grid>\r\n</form>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/content/GUI.form b/src/com/content/GUI.form
+--- a/src/com/content/GUI.form	(revision 9521a0b65e4ba452ba0c7d223f1b8f58adc9e1d6)
++++ b/src/com/content/GUI.form	(date 1632829062223)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.content.GUI">
+-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
++  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+     <margin top="0" left="0" bottom="0" right="0"/>
+     <constraints>
+       <xy x="20" y="20" width="500" height="400"/>
+@@ -14,14 +14,6 @@
+         </constraints>
+         <properties>
+           <text value="Start Spillet"/>
+-        </properties>
+-      </component>
+-      <component id="8a857" class="javax.swing.JLabel" binding="printLabel">
+-        <constraints>
+-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+-        </constraints>
+-        <properties>
+-          <text value="Label"/>
+         </properties>
+       </component>
+     </children>
