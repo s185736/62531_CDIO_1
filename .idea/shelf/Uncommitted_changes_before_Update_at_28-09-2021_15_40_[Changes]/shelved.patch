@@ -1,0 +1,141 @@
+Index: src/com/content/Dice.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*Kilde: https://www.unf.edu/~wkloster/2551/Dice.java */\r\npackage com.content;\r\nimport java.util.Arrays;\r\nimport java.util.Scanner;\r\n\r\npublic class Dice extends GUI {\r\n\r\n    public static void Design() {\r\n        int sumOfDices; //Summen af kastede terninger.\r\n        int requiredPoints = 40; //Points der skal opnås for at kunne vinde..\r\n        //Oprettes object for scanner klassen.\r\n        Scanner scanner = new Scanner(System.in);\r\n        //Her defineres navnene, og anvendes til at afgøre om hvis tur det er.\r\n        String a = \"Player1\";\r\n        String b = \"Player2\";\r\n        //Opretter to spillere med navne..\r\n        User user1 = new User(a);\r\n        User user2 = new User(b);\r\n        //Opretter to terninger af klassen Dice..\r\n        User dice1 = new User();\r\n        User dice2 = new User();\r\n\r\n        /* Terning processen startes:\r\n         * game == true -> Player1's tur.\r\n         * game == false -> Player2's tur.\r\n         */\r\n        boolean game = true;\r\n        //Herunder printes status af spillet når det er den specfikkes tur..\r\n        if (user1.getPoints() <= requiredPoints)\r\n            if (user2.getPoints() <= requiredPoints) {\r\n                do { //do loop anvendes, hvor status printes ud efter hver tur/runde.\r\n                    if (game) { //game = true er lig med player1\r\n                        System.out.println(\"\\n\" + user1.getOption() + \", det er din tur.\");\r\n                        //rollLabel.setText(\"\\n\" + user1.getOption() + \", det er din tur.\");\r\n                        System.out.println(\"Din samlede points: \" + user1.getPoints());\r\n                        System.out.println(\"Indtast kommandoen 'a' for at kaste med terningen.\");\r\n                        //rollLabel.setText(\"Din samlede points: \" + user1.getPoints());\r\n                    } else { //game = false er lig player2\r\n                        System.out.println(\"\\n\" + user2.getOption() + \", det er din tur.\");\r\n                        //rollLabel.setText(\"\\n\" + user2.getOption() + \", det er din tur.\");\r\n                        System.out.println(\"Din samlede points: \" + user2.getPoints());\r\n                        System.out.println(\"Indtast kommandoen 'l' for at kaste med terningen.\");\r\n                        //rollLabel.setText(\"Din samlede points: \" + user2.getPoints());\r\n                    }\r\n                    //Brugeren skal taste et bogstav for at programmet fortsætter\r\n                    String command;\r\n                    command = scanner.next();\r\n                    if (command.equalsIgnoreCase(\"a\")) //indtast ethvert bogstav/symbol for at kaste terningen.\r\n                        //Hermed kastes to terninger dice 1 og 2 og lægges sammen.\r\n                        for (User roll : Arrays.asList(dice1, dice2)) {\r\n                            roll.roll();\r\n                        }\r\n                    //Samlede resultat af kast med 2 personer.\r\n                    sumOfDices = dice1.getFaceValue() + dice2.getFaceValue();\r\n                    System.out.println(\"Resultat:\\n   Første terning: \" + dice1.getFaceValue() + \".\\n   Anden terning: \" + dice2.getFaceValue() + \".\");\r\n                    //Spilleregel: To 1'ere nulstiller spillerens points (regel 1).\r\n                    //setResetPoints nulstiller points når spillerne rammer par 1'ere..\r\n                    if (dice1.getFaceValue() == dice2.getFaceValue() && dice1.getFaceValue() == 1 && game == true) {\r\n                        user1.setResetPoints(); //hvis true så nulstilles points.\r\n                    } else if (dice1.getFaceValue() == dice2.getFaceValue() && dice1.getFaceValue() == 1 && game == false) {\r\n                        user2.setResetPoints(); //hvis true så nulstilles points.\r\n                    } else { //Hvis ikke, så fortsættes processen..\r\n                        System.out.println(\"Summen af begge Terning: \" + sumOfDices + \".\");\r\n                        System.out.println(\"-------------------------------\");\r\n                        //Spilleregel: Hvis terningen er to 6'ere og den forrige kast var to 6'ere vil dette afbryde løkken (regel 3).\r\n                        //If-sætning for at tjekke om man har fået 12 points (6x2) og også forrige kast.\r\n                        if (sumOfDices == 12 && user1.getFinalRoll() == 12) {\r\n                            break;\r\n                        } else {//samme gøres for spiller2.\r\n                            if (sumOfDices == 12 && user2.getFinalRoll() == 12) {\r\n                                break;\r\n                            } else {\r\n                                regel3_2x(user1, user2, dice1, dice2, sumOfDices); //tjek klassen.\r\n                            }\r\n                        }\r\n                    }\r\n                    regel1(user1, user2, dice1, dice2, requiredPoints); //tjek klassen.\r\n                } while (user1.getPoints() <= requiredPoints && user2.getPoints() <= requiredPoints);\r\n            }\r\n        regel2_3(user1, user2, dice1, dice2, requiredPoints); //tjek klassen.\r\n    }\r\n\r\n    public static void regel1(User user1, User user2, User dice1, User dice2, int requiredPoints) {\r\n        //Processen fortsættes, hvis der ikke er kastet nogle par.\r\n        if (user1.getPoints() > requiredPoints && dice1.getFaceValue() != dice2.getFaceValue()) {\r\n            user1.setPoints(40); //Hvis spilleren >= 40..\r\n            System.out.println(user1.getOption() + \" har nu opnået 40 points.\");\r\n        } else {\r\n            if (user2.getPoints() > requiredPoints && dice1.getFaceValue() != dice2.getFaceValue()) {\r\n                user2.setPoints(40); //Hvis spilleren >= 40..\r\n                System.out.println(user2.getOption() + \" har nu opnået 40 points.\");\r\n            }\r\n        }\r\n    }\r\n    public static void regel2_3(User user1, User user2, User dice1, User dice2, int requiredPoints) {\r\n        boolean game = true; //game process, true = player1 false = player2\r\n        //Meddelelse om man har slået par 6 to gange (regel 3).\r\n        if (dice1.getFaceValue() + dice2.getFaceValue() == 12) { //samlet points af to terninger.\r\n            if (user1.getFinalRoll() == 12) {//for spiller1\r\n                System.out.println(user1.getOption() + \" er vinderen, da der er slået to sæt af par 6'ere i træk.\");\r\n            }\r\n        } else if (dice1.getFaceValue() + dice2.getFaceValue() == 12) { //samlet points af to terninger.\r\n            if (user2.getFinalRoll() == 12) {//for spiller2\r\n                System.out.println(user2.getOption() + \" er vinderen, da der er slået to sæt af par 6'ere i træk.\");\r\n            }\r\n        }\r\n        //Meddelelse om man har slået par (regel 2).\r\n        if (user1.getPoints() >= requiredPoints) {\r\n            if (dice1.getFaceValue() == dice2.getFaceValue()) { //faceValue tjekker om man har slået par.\r\n                if (game == true) { //player1\r\n                    System.out.println(user1.getOption() + \" er vinderen, da der er blevet slået par \" + dice1.getFaceValue() + \".\");\r\n                }\r\n            }\r\n        } else if (user2.getPoints() >= requiredPoints) {\r\n            if (dice1.getFaceValue() == dice2.getFaceValue()) { //faceValue tjekker om man har slået par.\r\n                if (game == false) { //player2\r\n                    System.out.println(user2.getOption() + \" er vinderen, da der er blevet slået par \" + dice1.getFaceValue() + \".\");\r\n                }\r\n            }\r\n        }\r\n    }\r\n    public static void regel3_2x(User user1, User user2, User dice1, User dice2, int sumOfDices) {\r\n        //Spilleregel: Hvis terningen er to 6'ere og den forrige kast var to 6'ere vil dette afbryde løkken (regel 3).\r\n        boolean game = true;\r\n        if (game == true) {\r\n            //Her gives der ekstra point hvis man har fået et par.\r\n            if (dice1.getFaceValue() != dice2.getFaceValue()) {\r\n                user1.givePoints(sumOfDices);\r\n                game = false;\r\n            } else if (dice1.getFaceValue() == dice2.getFaceValue()) {\r\n                user1.givePoints(sumOfDices);\r\n                user1.setFinalRoll(sumOfDices);\r\n                game = true;\r\n            }\r\n        } else if (game == false) {\r\n            //Her gives der ekstra point hvis man har fået et par.\r\n            if (dice1.getFaceValue() != dice2.getFaceValue()) {\r\n                user2.givePoints(sumOfDices);\r\n                game = true;\r\n            } else if (dice1.getFaceValue() == dice2.getFaceValue()) {\r\n                user2.givePoints(sumOfDices);\r\n                user2.setFinalRoll(sumOfDices);\r\n                game = false;\r\n            }\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/content/Dice.java b/src/com/content/Dice.java
+--- a/src/com/content/Dice.java	(revision 7b949ef85b3a1b31ee30ca73ea0559443f0f6821)
++++ b/src/com/content/Dice.java	(date 1632836411941)
+@@ -1,5 +1,6 @@
+ /*Kilde: https://www.unf.edu/~wkloster/2551/Dice.java */
+ package com.content;
++import javax.swing.*;
+ import java.util.Arrays;
+ import java.util.Scanner;
+ 
+@@ -25,17 +26,17 @@
+          * game == false -> Player2's tur.
+          */
+         boolean game = true;
+-        //Herunder printes status af spillet når det er den specfikkes tur..
++        JLabel rollLabel = new JLabel();
+         if (user1.getPoints() <= requiredPoints)
+             if (user2.getPoints() <= requiredPoints) {
+-                do { //do loop anvendes, hvor status printes ud efter hver tur/runde.
+-                    if (game) { //game = true er lig med player1
++                do {
++                    if (game) {
+                         System.out.println("\n" + user1.getOption() + ", det er din tur.");
+                         //rollLabel.setText("\n" + user1.getOption() + ", det er din tur.");
+                         System.out.println("Din samlede points: " + user1.getPoints());
+                         System.out.println("Indtast kommandoen 'a' for at kaste med terningen.");
+                         //rollLabel.setText("Din samlede points: " + user1.getPoints());
+-                    } else { //game = false er lig player2
++                    } else {
+                         System.out.println("\n" + user2.getOption() + ", det er din tur.");
+                         //rollLabel.setText("\n" + user2.getOption() + ", det er din tur.");
+                         System.out.println("Din samlede points: " + user2.getPoints());
+@@ -70,7 +71,27 @@
+                             if (sumOfDices == 12 && user2.getFinalRoll() == 12) {
+                                 break;
+                             } else {
+-                                regel3_2x(user1, user2, dice1, dice2, sumOfDices); //tjek klassen.
++                                if (game == true) { //spiller1
++                                    //Her gives der ekstra point hvis man har fået et par.
++                                    if (dice1.getFaceValue() != dice2.getFaceValue()) {
++                                        user1.givePoints(sumOfDices);
++                                        game = false;
++                                    } else if (dice1.getFaceValue() == dice2.getFaceValue()) { //faceValue tjekker om man har slået 6 par samt den forrige.
++                                        user1.givePoints(sumOfDices);
++                                        user1.setFinalRoll(sumOfDices);
++                                        game = true;
++                                    }
++                                } else if (game == false) { //spiller2
++                                    //Her gives der ekstra point hvis man har fået et par.
++                                    if (dice1.getFaceValue() != dice2.getFaceValue()) {
++                                        user2.givePoints(sumOfDices);
++                                        game = true;
++                                    } else if (dice1.getFaceValue() == dice2.getFaceValue()) { //faceValue tjekker om man har slået 6 par samt den forrige.
++                                        user2.givePoints(sumOfDices);
++                                        user2.setFinalRoll(sumOfDices);
++                                        game = false;
++                                    }
++                                }
+                             }
+                         }
+                     }
+@@ -92,6 +113,7 @@
+             }
+         }
+     }
++
+     public static void regel2_3(User user1, User user2, User dice1, User dice2, int requiredPoints) {
+         boolean game = true; //game process, true = player1 false = player2
+         //Meddelelse om man har slået par 6 to gange (regel 3).
+@@ -119,29 +141,4 @@
+             }
+         }
+     }
+-    public static void regel3_2x(User user1, User user2, User dice1, User dice2, int sumOfDices) {
+-        //Spilleregel: Hvis terningen er to 6'ere og den forrige kast var to 6'ere vil dette afbryde løkken (regel 3).
+-        boolean game = true;
+-        if (game == true) {
+-            //Her gives der ekstra point hvis man har fået et par.
+-            if (dice1.getFaceValue() != dice2.getFaceValue()) {
+-                user1.givePoints(sumOfDices);
+-                game = false;
+-            } else if (dice1.getFaceValue() == dice2.getFaceValue()) {
+-                user1.givePoints(sumOfDices);
+-                user1.setFinalRoll(sumOfDices);
+-                game = true;
+-            }
+-        } else if (game == false) {
+-            //Her gives der ekstra point hvis man har fået et par.
+-            if (dice1.getFaceValue() != dice2.getFaceValue()) {
+-                user2.givePoints(sumOfDices);
+-                game = true;
+-            } else if (dice1.getFaceValue() == dice2.getFaceValue()) {
+-                user2.givePoints(sumOfDices);
+-                user2.setFinalRoll(sumOfDices);
+-                game = false;
+-            }
+-        }
+-    }
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d93559a9-d85f-48a2-8aee-5a126fa185b4\" name=\"Changes\" comment=\"GUI klassen opdateres, unødvendige linjer slettes.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/Terning/com/content/Dice.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/Terning/com/content/Dice.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/com/content/Dice.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/com/content/Dice.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1yirmbupNIQcmHgJJInxPUPWVxI\" />\r\n  <component name=\"ProjectView\">\r\n    <navigator currentView=\"ProjectPane\" proportions=\"\" version=\"1\" splitterProportion=\"0.5\">\r\n      <flattenPackages />\r\n      <showMembers />\r\n      <showModules />\r\n      <showLibraryContents />\r\n      <hideEmptyPackages />\r\n      <abbreviatePackageNames />\r\n      <autoscrollToSource />\r\n      <autoscrollFromSource />\r\n      <sortByType />\r\n    </navigator>\r\n    <panes>\r\n      <pane id=\"Scope\" />\r\n      <pane id=\"PackagesPane\" />\r\n      <pane id=\"ProjectPane\">\r\n        <subPane>\r\n          <PATH>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\r\n            </PATH_ELEMENT>\r\n          </PATH>\r\n          <PATH>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\r\n            </PATH_ELEMENT>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\r\n            </PATH_ELEMENT>\r\n          </PATH>\r\n          <PATH>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\r\n            </PATH_ELEMENT>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"untitled104\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\r\n            </PATH_ELEMENT>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"src\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\r\n            </PATH_ELEMENT>\r\n            <PATH_ELEMENT>\r\n              <option name=\"myItemId\" value=\"company\" />\r\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\r\n            </PATH_ELEMENT>\r\n          </PATH>\r\n        </subPane>\r\n      </pane>\r\n    </panes>\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main (1)\">\r\n    <configuration name=\"Main (1)\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.content.Main\" />\r\n      <module name=\"Terning\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.content.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.content.Dice\" />\r\n      <module name=\"Terning\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"file://$PROJECT_DIR$\" />\r\n      <RunnerSettings RunnerId=\"Run\" />\r\n      <ConfigurationWrapper RunnerId=\"Run\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Main\" />\r\n      <item itemvalue=\"Application.Main (1)\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main (1)\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d93559a9-d85f-48a2-8aee-5a126fa185b4\" name=\"Changes\" comment=\"\" />\r\n      <created>1632745418000</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1632745418000</updated>\r\n      <workItem from=\"1632745419511\" duration=\"2013000\" />\r\n      <workItem from=\"1632747561077\" duration=\"241000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Updated.\">\r\n      <created>1632747227842</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1632747227842</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Updated.\" />\r\n    <MESSAGE value=\"GUI klassen opdateres, unødvendige linjer slettes.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"GUI klassen opdateres, unødvendige linjer slettes.\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7b949ef85b3a1b31ee30ca73ea0559443f0f6821)
++++ b/.idea/workspace.xml	(date 1632836096353)
+@@ -3,6 +3,7 @@
+   <component name="ChangeListManager">
+     <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="GUI klassen opdateres, unødvendige linjer slettes.">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/EasyDiceGame/Design.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/EasyDiceGame/Design.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
+     </list>
+@@ -141,7 +142,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1632747227842</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="GUI klassen opdateres, unødvendige linjer slettes.">
++      <created>1632835303733</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1632835303733</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">

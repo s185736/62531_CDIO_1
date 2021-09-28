@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_28-09-2021_15_40_[Changes]" date="1632836451346" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-09-2021_15_40_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 28-09-2021 15:40 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Terning/com/content/Dice.class" />
+    <option name="AFTER_PATH" value="out/production/Terning/com/content/Dice.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-09-2021_15_40_[Changes]/Dice.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Calculator/com/content/Die/EasyDiceGame/Design.class" />
+    <option name="AFTER_PATH" value="out/production/Calculator/com/content/Die/EasyDiceGame/Design.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-09-2021_15_40_[Changes]/Design.class" />
+  </binary>
+</changelist>
