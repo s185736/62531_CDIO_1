@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="GUI klassen opdateres, unødvendige linjer slettes.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/content/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/content/GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/GUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/content/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/content/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +20,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1yirmbupNIQcmHgJJInxPUPWVxI" />
   <component name="ProjectView">
