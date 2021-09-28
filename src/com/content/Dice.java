@@ -4,7 +4,6 @@ public class Dice {
 
     public static void Dice() {
         int Ole[] = new int[50], Jens[] = new int[50]; //1. terning.
-        int Ole1[] = new int[50], Jens1[] = new int[50]; //2. terning.
         int OlePoints = 0, JensPoints = 0;
         int matches = 50, i =0; //matches; antal runder.
 
@@ -12,10 +11,8 @@ public class Dice {
             System.out.println("Status: " + matches+". runde.");
             Ole[i] = (int) ((Math.random() * 6) + 1);
             Jens[i] = (int) ((Math.random() * 6) + 1);
-            Ole1[i] = (int) ((Math.random() * 6) + 1);
-            Jens1[i] = (int) ((Math.random() * 6) + 1);
-            System.out.println("Ole kaster " + Ole[i]+" og " + Ole1[i]+".");
-            System.out.println("Jens kaster " + Jens[i]+" og " + Jens1[i]+".");
+            System.out.println("Ole kaster " + Ole[i]);
+            System.out.println("Jens kaster " + Jens[i]);
             System.out.println("---------------------------");
 
             if (Ole[i] != Jens[i]) {
