@@ -6,6 +6,15 @@ import java.util.Scanner;
 
 public class Dice extends GUI {
 
+    /* Spillet:
+     * For at gennemføre spillet genererer vi to tilfældige tal for hver spiller og samler summen af hver kast.
+     * Derefter skal der kontrolleres, om de to tal er ens eller ej.
+     * Hvis de er de samme, skal vi generere yderligere to til den samme spiller (får ekstra kast).
+     * Dog hvis der kastes par 1'ere vil spillerens points nulstilles.
+     * Kastes der to par 6'ere i løbet af kampen vil spilleren der har kastet vinde kampen.
+     * Så vil der kontrolleres, om deres points (hver for sig) er lig 40 eller større.
+     */
+
     public static void Design() {
         int sumOfDices; //Summen af kastede terninger.
         int requiredPoints = 40; //Points der skal opnås for at kunne vinde..
