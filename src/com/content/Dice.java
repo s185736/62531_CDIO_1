@@ -15,11 +15,13 @@ public class Dice extends GUI {
         String a = "Player1";
         String b = "Player2";
         //Opretter to spillere med navne..
-        User user1 = new User(a);
-        User user2 = new User(b);
+        User user1, user2;
+        user1 = new User(a);
+        user2 = new User(b);
         //Opretter to terninger af klassen Dice..
-        User dice1 = new User();
-        User dice2 = new User();
+        User dice1, dice2;
+        dice1 = new User();
+        dice2 = new User();
 
         /* Terning processen startes:
          * game == true -> Player1's tur.
@@ -109,7 +111,7 @@ public class Dice extends GUI {
     public static void regel1(User user1, User user2, User dice1, User dice2, int requiredPoints) {
         //Processen fortsættes, hvis der ikke er kastet nogle par.
         if (user1.getPoints() <= requiredPoints) {
-            if (user2.getPoints() > requiredPoints) {
+            if (user2.getPoints() >= requiredPoints) {
                 if (dice1.getFaceValue() != dice2.getFaceValue()) {
                     System.out.println(user2.getOption() + " har nu opnået 40 points og har dermed vundet spillet.\nTillykke!");
                 }
