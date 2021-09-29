@@ -13,6 +13,7 @@ public class Dice extends GUI {
      * Dog hvis der kastes par 1'ere vil spillerens points nulstilles.
      * Kastes der to par 6'ere i løbet af kampen vil spilleren der har kastet vinde kampen.
      * Så vil der kontrolleres, om deres points (hver for sig) er lig 40 eller større.
+     * Dermed første spiller der har opnået 40 points vil vinde kampen.
      */
 
     public static void Design() {
