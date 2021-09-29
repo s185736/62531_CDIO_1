@@ -39,6 +39,11 @@ public class Dice extends GUI {
          */
         boolean game = true;
         JLabel rollLabel = new JLabel();
+
+
+        //GUI gui = new GUI();
+
+
         if (user1.getPoints() <= requiredPoints)
             if (user2.getPoints() <= requiredPoints) {
                 do {
@@ -46,6 +51,10 @@ public class Dice extends GUI {
             System.out.println("\n" + user1.getOption() + ", det er din tur.");
             //rollLabel.setText("\n" + user1.getOption() + ", det er din tur.");
             System.out.println("Din samlede points: " + user1.getPoints());
+
+            /*gui.scoreBoard.setText("hej" + user1.getPoints());
+            gui.doLayout();*/
+
             System.out.println("Indtast kommandoen 'a' for at kaste med terningen.");
             //rollLabel.setText("Din samlede points: " + user1.getPoints());
         } else {
