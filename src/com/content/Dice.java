@@ -84,15 +84,16 @@ public class Dice extends GUI {
                     break;
                 } else {
                     if (game) { //spiller1
-                    //Her gives der ekstra point hvis man har fået et par.
+                    //Hvis begge terninger ikke er ens gives samlede points.
                     if (dice1.getFaceValue() != dice2.getFaceValue()) {
-                        user1.givePoints(sumOfDices);
+                        user1.givePoints(sumOfDices); //points af samlede kast.
                         game = false;
                     } else {
                         if (dice1.getFaceValue() != dice2.getFaceValue()) {
-                        } else { //faceValue tjekker om man har slået 6 par samt den forrige.
-                            user1.givePoints(sumOfDices);
-                            user1.setFinalRoll(sumOfDices);
+                        } else { //en ny tilstand tilføjes hvis begge terninger er det samme.
+                            //faceValue tjekker om man har slået 6 par samt den forrige.
+                            user1.givePoints(sumOfDices); //Giver points af samlede kast.
+                            user1.setFinalRoll(sumOfDices); //Kastes der igen et par vinder spilleren.
                             game = true;
                         }
                     }

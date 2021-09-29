@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Forbedringer.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Kommentarer.">
       <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +131,7 @@
       <updated>1632745418000</updated>
       <workItem from="1632745419511" duration="2013000" />
       <workItem from="1632747561077" duration="241000" />
-      <workItem from="1632904343314" duration="2684000" />
+      <workItem from="1632904343314" duration="3040000" />
     </task>
     <task id="LOCAL-00001" summary="Updated.">
       <created>1632747227842</created>
@@ -169,7 +168,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632905910947</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Forbedringer samt kommentarer.">
+      <created>1632907076318</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632907076318</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Kommentarer.">
+      <created>1632907118734</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1632907118734</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +207,8 @@
     <MESSAGE value="Der arbejdes videre med implementering af spillereglerne." />
     <MESSAGE value="Der kommenteres." />
     <MESSAGE value="Forbedringer." />
-    <option name="LAST_COMMIT_MESSAGE" value="Forbedringer." />
+    <MESSAGE value="Forbedringer samt kommentarer." />
+    <MESSAGE value="Kommentarer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Kommentarer." />
   </component>
 </project>
