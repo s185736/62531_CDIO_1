@@ -10,8 +10,6 @@ class User {
 
     public void givePoints(int sum) { this.points = this.points + sum;}
 
-    public void setPoints(int points) { this.points = points;}
-
     public int getPoints() { return this.points;}
 
     public int getFinalRoll() { return finalRoll; }

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="If-statement til points-tjekning.">
+    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Der kommenteres.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/content/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/content/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/content/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,6 +138,7 @@
       <updated>1632745418000</updated>
       <workItem from="1632745419511" duration="2013000" />
       <workItem from="1632747561077" duration="241000" />
+      <workItem from="1632904343314" duration="748000" />
     </task>
     <task id="LOCAL-00001" summary="Updated.">
       <created>1632747227842</created>
@@ -151,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632839007754</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Der arbejdes videre med implementering af spillereglerne.">
+      <created>1632862628057</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1632862628057</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +183,8 @@
     <MESSAGE value="Updated." />
     <MESSAGE value="GUI klassen opdateres, unødvendige linjer slettes." />
     <MESSAGE value="If-statement til points-tjekning." />
-    <option name="LAST_COMMIT_MESSAGE" value="If-statement til points-tjekning." />
+    <MESSAGE value="Der arbejdes videre med implementering af spillereglerne." />
+    <MESSAGE value="Der kommenteres." />
+    <option name="LAST_COMMIT_MESSAGE" value="Der kommenteres." />
   </component>
 </project>
