@@ -16,14 +16,14 @@ public class Dice extends GUI {
      * Dermed første spiller der har opnået 40 points vil vinde kampen.
      */
 
-    public static void Design() {
+    public static void Design(String puname1, String puname2) {
         int sumOfDices; //Summen af kastede terninger.
         int requiredPoints = 40; //Points der skal opnås for at kunne vinde..
         //Oprettes object for scanner klassen.
         Scanner scanner = new Scanner(System.in);
         //Her defineres navnene, og anvendes til at afgøre om hvis tur det er.
-        String a = "Player1";
-        String b = "Player2";
+        String a = puname1;
+        String b = puname2;
         //Opretter to spillere med navne..
         User user1, user2;
         user1 = new User(a);

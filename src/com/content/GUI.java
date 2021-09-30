@@ -13,12 +13,12 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame{
     private JButton startSpilletButton;
     private JPanel panel1;
-    public JLabel scoreBoard;
+    private JTextPane programmetSimulererEtTerningspilTextPane;
+    private JTextArea programmetSimulererEtTerningspilTextArea;
 
 
     public GUI() { //Konstruktor: initialisere nyoprettede objekter, før det bruges.
         add(panel1);
-
         setTitle("Terningspil");
         setBounds(100,100,450,300);
         // Stopper programmet hvis vinduet lukkes før start
@@ -31,9 +31,11 @@ public class GUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Funktionen af knappen implementeres herunde.
-                //dispose(); //slukker for JFrame(GUI'en).
-                Dice game = new Dice(); //Objekter et objekt af Dice.
-                game.Design(); //Kører klassen Design i Dice.java.
+                dispose(); //slukker for JFrame(GUI'en).
+                String puname1 = "";
+                String puname2 = "";
+                UserGUI ug = new UserGUI(); //Objekter et objekt af Dice.
+                ug.start();
 
             }
         });
