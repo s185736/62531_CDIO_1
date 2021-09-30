@@ -1,49 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Terning:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Forbedringer..">
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/BasicNumCalculator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/BasicSecondCalculator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/BasicDice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/EasyDiceGame.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/EasyDiceGame/Design.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/EasyDiceGame/GUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/EasyDiceGame/GUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/EasyDiceGame/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/EasyDiceGame/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2$IncomingReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatClient2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatServer2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatServer2$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatServer2$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatServer2$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatServer2$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatServer2$ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatServer2$ServerStart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/ChatServer2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/Die/ModerateDiceGame/Dice2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/content/MultiOperations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
+    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Forbedringer og .jar fil oprettet.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633004749415</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Forbedringer og .jar fil oprettet.">
+      <created>1633005162359</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1633005162359</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +247,7 @@
     <MESSAGE value="Forbedringer." />
     <MESSAGE value="Forbedringer samt GUI hvori spillerne får muligheden for at indtaste brugernavne." />
     <MESSAGE value="Forbedringer.." />
-    <option name="LAST_COMMIT_MESSAGE" value="Forbedringer.." />
+    <MESSAGE value="Forbedringer og .jar fil oprettet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Forbedringer og .jar fil oprettet." />
   </component>
 </project>
