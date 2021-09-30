@@ -41,7 +41,7 @@ public class UserGUI extends JFrame {
                 User u1 = new User(username1);
                 User u2 = new User(username2);
                 Dice d = new Dice();
-                //d.Design(username1, username2);
+                d.Design(username1, username2);
             }
         });
     }
