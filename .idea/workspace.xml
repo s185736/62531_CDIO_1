@@ -4,7 +4,13 @@
     <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="GUI klassen opdateres, unødvendige linjer slettes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/GUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/content/GUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/content/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/content/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,13 +118,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="gameTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameTest" />
+      <module name="Terning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.gameTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.gameTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -133,6 +148,8 @@
       <updated>1632745418000</updated>
       <workItem from="1632745419511" duration="2013000" />
       <workItem from="1632747561077" duration="241000" />
+      <workItem from="1632999201869" duration="8933000" />
+      <workItem from="1633009387087" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="Updated.">
       <created>1632747227842</created>
