@@ -17,7 +17,6 @@ public class UserGUI extends JFrame {
         setLocation(500,280);
         panel.setLayout (null);
 
-
         textField1.setBounds(70,30,150,20);
         textField2.setBounds(70,65,150,20);
         button1.setBounds(110,100,80,20);
@@ -41,6 +40,8 @@ public class UserGUI extends JFrame {
                 User u1 = new User(username1);
                 User u2 = new User(username2);
                 Dice d = new Dice();
+                d.Design();
+
                 //d.Design(username1, username2);
             }
         });
