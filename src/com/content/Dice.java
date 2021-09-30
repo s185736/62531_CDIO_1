@@ -41,6 +41,7 @@ public class Dice {
         boolean game = true;
         JLabel rollLabel = new JLabel();
 
+<<<<<<< HEAD
         double test = 0;
         int value1 = 0;
         int value2 = 0;
@@ -48,6 +49,11 @@ public class Dice {
         int value4 = 0;
         int value5 = 0;
         int value6 = 0;
+=======
+
+        //GUI gui = new GUI();
+
+>>>>>>> parent of 5010604 (Forbedringer..Oprydning af data)
 
         if (user1.getPoints() <= requiredPoints)
             if (user2.getPoints() <= requiredPoints) {
