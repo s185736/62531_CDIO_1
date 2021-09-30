@@ -40,10 +40,6 @@ public class Dice extends GUI {
         boolean game = true;
         JLabel rollLabel = new JLabel();
 
-
-        //GUI gui = new GUI();
-
-
         if (user1.getPoints() <= requiredPoints)
             if (user2.getPoints() <= requiredPoints) {
                 do {
