@@ -16,14 +16,14 @@ public class Dice extends GUI {
      * Dermed første spiller der har opnået 40 points vil vinde kampen.
      */
 
-    public static void Design(String puname1, String puname2) {
+    public static void Design(String username1, String username2) {
         int sumOfDices; //Summen af kastede terninger.
         int requiredPoints = 40; //Points der skal opnås for at kunne vinde..
         //Oprettes object for scanner klassen.
         Scanner scanner = new Scanner(System.in);
         //Her defineres navnene, og anvendes til at afgøre om hvis tur det er.
-        String a = puname1;
-        String b = puname2;
+        String a = username1;
+        String b = username2;
         //Opretter to spillere med navne..
         User user1, user2;
         user1 = new User(a);
@@ -48,42 +48,43 @@ public class Dice extends GUI {
             if (user2.getPoints() <= requiredPoints) {
                 do {
                     if (game) {
-            System.out.println("\n" + user1.getOption() + ", det er din tur.");
-            //rollLabel.setText("\n" + user1.getOption() + ", det er din tur.");
-            System.out.println("Din samlede points: " + user1.getPoints());
+                        System.out.println("\n" + user1.getOption() + ", det er din tur.");
+                        //rollLabel.setText("\n" + user1.getOption() + ", det er din tur.");
+                        System.out.println("Din samlede points: " + user1.getPoints());
 
             /*gui.scoreBoard.setText("hej" + user1.getPoints());
             gui.doLayout();*/
 
-            System.out.println("Indtast kommandoen 'a' for at kaste med terningen.");
-            //rollLabel.setText("Din samlede points: " + user1.getPoints());
-        } else {
-            System.out.println("\n" + user2.getOption() + ", det er din tur.");
-            //rollLabel.setText("\n" + user2.getOption() + ", det er din tur.");
-            System.out.println("Din samlede points: " + user2.getPoints());
-            System.out.println("Indtast kommandoen 'l' for at kaste med terningen.");
-            //rollLabel.setText("Din samlede points: " + user2.getPoints());
-        }
-        //Brugeren skal taste et bogstav for at programmet fortsætter
-        String command;
-        command = scanner.next();
-        if (command.equalsIgnoreCase("a") || command.equalsIgnoreCase("l")) //indtast ethvert bogstav/symbol for at kaste terningen.
-            //Hermed kastes to terninger dice 1 og 2 og lægges sammen.
-            for (User roll : Arrays.asList(dice1, dice2)) {
-                roll.roll();
-            }
-        //Samlede resultat af kast med 2 personer.
-        sumOfDices = dice1.getFaceValue() + dice2.getFaceValue();
-        System.out.println("Resultat:\n   Første terning: " + dice1.getFaceValue() + ".\n   Anden terning: " + dice2.getFaceValue() + ".");
-        //Spilleregel: To 1'ere nulstiller spillerens points (regel 1).
-        //setResetPoints nulstiller points når spillerne rammer par 1'ere..
-        if (dice1.getFaceValue() == dice2.getFaceValue() && dice1.getFaceValue() == 1 && game == true) {
-            user1.setResetPoints(); //hvis true så nulstilles points.
-        } else if (dice1.getFaceValue() == dice2.getFaceValue() && dice1.getFaceValue() == 1 && game == false) {
-            user2.setResetPoints(); //hvis true så nulstilles points.
-        } else { //Hvis ikke, så fortsættes processen..
-            System.out.println("Summen af begge Terning: " + sumOfDices + ".");
-            System.out.println("-------------------------------");
+                        System.out.println("Indtast kommandoen 'a' for at kaste med terningen.");
+                        //rollLabel.setText("Din samlede points: " + user1.getPoints());
+                    } else {
+                        System.out.println("\n" + user2.getOption() + ", det er din tur.");
+                        //rollLabel.setText("\n" + user2.getOption() + ", det er din tur.");
+                        System.out.println("Din samlede points: " + user2.getPoints());
+                        System.out.println("Indtast kommandoen 'l' for at kaste med terningen.");
+                        //rollLabel.setText("Din samlede points: " + user2.getPoints());
+                    }
+                    //Brugeren skal taste et bogstav for at programmet fortsætter
+                    String command;
+                    command = scanner.next();
+                    if (command.equalsIgnoreCase("a") || command.equalsIgnoreCase("l")) //indtast ethvert bogstav/symbol for at kaste terningen.
+                        //Hermed kastes to terninger dice 1 og 2 og lægges sammen.
+                        for (User roll : Arrays.asList(dice1, dice2)) {
+                            roll.roll();
+                        }
+                    System.out.println("Rafflebægeren rystes..");
+                    //Samlede resultat af kast med 2 personer.
+                    sumOfDices = dice1.getFaceValue() + dice2.getFaceValue();
+                    System.out.println("Resultat:\n   Første terning: " + dice1.getFaceValue() + ".\n   Anden terning: " + dice2.getFaceValue() + ".");
+                    //Spilleregel: To 1'ere nulstiller spillerens points (regel 1).
+                    //setResetPoints nulstiller points når spillerne rammer par 1'ere..
+            if (dice1.getFaceValue() == dice2.getFaceValue() && dice1.getFaceValue() == 1 && game == true) {
+                user1.setResetPoints(); //hvis true så nulstilles points.
+            } else if (dice1.getFaceValue() == dice2.getFaceValue() && dice1.getFaceValue() == 1 && game == false) {
+                user2.setResetPoints(); //hvis true så nulstilles points.
+            } else { //Hvis ikke, så fortsættes processen..
+                System.out.println("Summen af begge Terning: " + sumOfDices + ".");
+                System.out.println("-------------------------------");
             //Spilleregel: Hvis terningen er to 6'ere og den forrige kast var to 6'ere vil dette afbryde løkken (regel 3).
             //If-sætning for at tjekke om man har fået 12 points (6x2) og også forrige kast.
             if (sumOfDices == 12 && user1.getFinalRoll() == 12) {

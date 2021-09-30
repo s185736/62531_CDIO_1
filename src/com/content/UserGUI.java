@@ -36,12 +36,12 @@ public class UserGUI extends JFrame {
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 dispose();
-                String puname1 = textField1.getText();
-                String puname2 = textField2.getText();
-                User u1 = new User(puname1);
-                User u2 = new User(puname2);
+                String username1 = textField1.getText();
+                String username2 = textField2.getText();
+                User u1 = new User(username1);
+                User u2 = new User(username2);
                 Dice d = new Dice();
-                d.Design(puname1, puname2);
+                d.Design(username1, username2);
             }
         });
     }

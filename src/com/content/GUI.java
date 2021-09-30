@@ -32,8 +32,8 @@ public class GUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 //Funktionen af knappen implementeres herunde.
                 dispose(); //slukker for JFrame(GUI'en).
-                String puname1 = "";
-                String puname2 = "";
+                String username1 = "";
+                String username2 = "";
                 UserGUI ug = new UserGUI(); //Objekter et objekt af Dice.
                 ug.start();
 
