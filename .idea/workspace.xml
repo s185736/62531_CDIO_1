@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Terning/com/SelectGUI$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Terning/com/SelectGUI$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Terning/com/SelectGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/content/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/content/UserGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/UserGUI.java" afterDir="false" />
-    </list>
+    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Fejl er genopstået og der arbejdes videre." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -220,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633004749415</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fejl er genopstået og der arbejdes videre.">
+      <created>1633081424818</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1633081424818</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +246,7 @@
     <MESSAGE value="Forbedringer." />
     <MESSAGE value="Forbedringer samt GUI hvori spillerne får muligheden for at indtaste brugernavne." />
     <MESSAGE value="Forbedringer.." />
-    <option name="LAST_COMMIT_MESSAGE" value="Forbedringer.." />
+    <MESSAGE value="Fejl er genopstået og der arbejdes videre." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fejl er genopstået og der arbejdes videre." />
   </component>
 </project>
