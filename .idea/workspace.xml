@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="Problem fikset.">
-      <change afterPath="$PROJECT_DIR$/src/com/SelectGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/SelectGUI.java" afterDir="false" />
+    <list default="true" id="d93559a9-d85f-48a2-8aee-5a126fa185b4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/Terning/com/SelectGUI$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Terning/com/SelectGUI$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Terning/com/SelectGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Dice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/UserGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/UserGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terning/com/content/UserGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Terning/com/content/UserGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/content/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Dice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/content/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/content/UserGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/content/UserGUI.java" afterDir="false" />
@@ -151,6 +148,7 @@
       <workItem from="1632745419511" duration="2013000" />
       <workItem from="1632747561077" duration="241000" />
       <workItem from="1632904343314" duration="3040000" />
+      <workItem from="1633012971083" duration="726000" />
     </task>
     <task id="LOCAL-00001" summary="Updated.">
       <created>1632747227842</created>

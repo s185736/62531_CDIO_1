@@ -1,11 +1,12 @@
 /*Kilde: https://www.unf.edu/~wkloster/2551/Dice.java */
-package com.content;
+package com.test;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Dice {
+public class DiceTest {
 
     /* Spillet:
      * For at gennemføre spillet genererer vi to tilfældige tal for hver spiller og samler summen af hver kast.
@@ -26,13 +27,13 @@ public class Dice {
         String a = "Player1";
         String b = "Player2";
         //Opretter to spillere med navne..
-        User user1, user2;
-        user1 = new User(a);
-        user2 = new User(b);
+        UserTest user1, user2;
+        user1 = new UserTest(a);
+        user2 = new UserTest(b);
         //Opretter to terninger af klassen Dice..
-        User dice1, dice2;
-        dice1 = new User();
-        dice2 = new User();
+        UserTest dice1, dice2;
+        dice1 = new UserTest();
+        dice2 = new UserTest();
 
         /* Terning processen startes:
          * game == true -> Player1's tur.
@@ -41,7 +42,6 @@ public class Dice {
         boolean game = true;
         JLabel rollLabel = new JLabel();
 
-<<<<<<< HEAD
         double test = 0;
         int value1 = 0;
         int value2 = 0;
@@ -49,11 +49,6 @@ public class Dice {
         int value4 = 0;
         int value5 = 0;
         int value6 = 0;
-=======
-
-        //GUI gui = new GUI();
-
->>>>>>> parent of 5010604 (Forbedringer..Oprydning af data)
 
         if (user1.getPoints() <= requiredPoints)
             if (user2.getPoints() <= requiredPoints) {
@@ -92,7 +87,7 @@ public class Dice {
                         }
                      */
 
-                    for (User roll : Arrays.asList(dice1, dice2)) {
+                    for (UserTest roll : Arrays.asList(dice1, dice2)) {
                         roll.roll();
                     }
 
@@ -155,7 +150,7 @@ public class Dice {
                             //break;
                         } else {//samme gøres for spiller2.
                             if (sumOfDices == 12 && user2.getFinalRoll() == 12) {
-                               // break;
+                                // break;
 
 
                             } else {
@@ -221,7 +216,7 @@ public class Dice {
         System.out.println("6 fremgår " + regn6 + "%");
     }
 
-    public static void regel1(User user1, User user2, User dice1, User dice2, int requiredPoints) {
+    public static void regel1(UserTest user1, UserTest user2, UserTest dice1, UserTest dice2, int requiredPoints) {
         //Processen fortsættes, hvis der ikke er kastet nogle par.
         if (user1.getPoints() <= requiredPoints) {
             if (user2.getPoints() >= requiredPoints) {
