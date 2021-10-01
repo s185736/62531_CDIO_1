@@ -6,6 +6,9 @@ Programmet simulerer et terningspil, hvor 2 spillere skiftevis kaster to terning
 
 Spilleregler:
     1. Spilleren der først opnår 40 points vinder.
+    
     2. Hvis man får et par vil dette give en ekstra kast.
+    
     3. Hvis man får et par 1'ere vil dette medføre en nulstilling.
+    
     4. Hvis man får to par 6'ere i løbet af kampen vinder man.
