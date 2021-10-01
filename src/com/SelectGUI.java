@@ -14,7 +14,7 @@ public class SelectGUI extends JFrame {
     private JButton testSpilletButton;
 
     public SelectGUI() {
-        super("Terningspillet");
+        super("Skriv venligst jeres navne!");
         add(panel1);
         setSize(350,200);
         setLocation(500,280);
